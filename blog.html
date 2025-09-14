@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Resources - HOTI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        
+        .blog-container {
+            padding: 80px 20px;
+            background: #f8f9ff;
+        }
+        
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #e0e6ed;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .blog-content {
+            padding: 2rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .blog-category {
+            background: #e8edff;
+            color: #667eea;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-weight: 500;
+        }
+        
+        .blog-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .blog-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: #764ba2;
+        }
+        
+        .resources-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .resource-card {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            background: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>HOTI</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog & Resources</h1>
+            <p>Insights, stories, and resources to inspire innovation and creativity</p>
+        </div>
+    </section>
+
+    <!-- Blog Container -->
+    <section class="blog-container">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Latest Insights</h2>
+            
+            <!-- Blog Filters -->
+            <div class="blog-filters">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="innovation">Innovation</button>
+                <button class="filter-btn" data-category="community">Community Stories</button>
+                <button class="filter-btn" data-category="how-to">How-To Guides</button>
+                <button class="filter-btn" data-category="technology">Technology</button>
+                <button class="filter-btn" data-category="creativity">Creativity</button>
+            </div>
+            
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-category="innovation">
+                    <div class="blog-image">
+                        <span>Innovation Spotlight</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Innovation</span>
+                            <span>December 10, 2024</span>
+                        </div>
+                        <h3>5 Ways Young Innovators Are Changing Their Communities</h3>
+                        <p>Discover inspiring stories of young people who are using creativity and innovation to solve real problems in their communities. From apps that connect neighbors to sustainable solutions for local challenges.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-category="how-to">
+                    <div class="blog-image">
+                        <span>How-To Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">How-To</span>
+                            <span>December 8, 2024</span>
+                        </div>
+                        <h3>Getting Started with Design Thinking: A Beginner's Guide</h3>
+                        <p>Learn the fundamentals of design thinking and how this human-centered approach can help you solve problems more effectively. Perfect for young innovators just getting started.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-card" data-category="community">
+                    <div class="blog-image">
+                        <span>Community Story</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Community</span>
+                            <span>December 5, 2024</span>
+                        </div>
+                        <h3>From Idea to Impact: Sarah's Journey in Tech for Good</h3>
+                        <p>Follow the inspiring journey of Sarah, a 16-year-old participant who created a mobile app to help her community access clean water information during her time in our Tech for Good program.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 4 -->
+                <article class="blog-card" data-category="technology">
+                    <div class="blog-image">
+                        <span>Tech Insights</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Technology</span>
+                            <span>December 3, 2024</span>
+                        </div>
+                        <h3>The Future of AI in Social Good: What Young People Need to Know</h3>
+                        <p>Explore how artificial intelligence is being used to address social challenges and what young innovators should know about this powerful technology.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 5 -->
+                <article class="blog-card" data-category="creativity">
+                    <div class="blog-image">
+                        <span>Creative Arts</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Creativity</span>
+                            <span>November 30, 2024</span>
+                        </div>
+                        <h3>Using Art to Spark Social Change: Stories from Our Creative Workshop</h3>
+                        <p>Discover how participants in our Creative Arts & Storytelling program are using various art forms to raise awareness about important social issues in their communities.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 6 -->
+                <article class="blog-card" data-category="how-to">
+                    <div class="blog-image">
+                        <span>Innovation Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">How-To</span>
+                            <span>November 28, 2024</span>
+                        </div>
+                        <h3>Building Your First Prototype: Tips and Tools for Young Inventors</h3>
+                        <p>A comprehensive guide to creating your first prototype, including materials, tools, and techniques that are accessible to young innovators working on community solutions.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Educational Resources</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: #666;">Access our collection of tools, guides, and resources to support your innovation journey</p>
+            
+            <div class="resources-grid">
+                
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Innovation Toolkit</h3>
+                    <p>A comprehensive collection of worksheets, templates, and guides for design thinking, prototyping, and project planning.</p>
+                    <a href="#" class="resource-link">Download Toolkit</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">🎬</div>
+                    <h3>Video Tutorials</h3>
+                    <p>Step-by-step video guides covering everything from basic coding to advanced prototyping techniques, all focused on social impact projects.</p>
+                    <a href="#" class="resource-link">Watch Videos</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">👥</div>
+                    <h3>Mentorship Network</h3>
+                    <p>Connect with experienced mentors and fellow innovators in our community network for guidance and collaboration opportunities.</p>
+                    <a href="#" class="resource-link">Join Network</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">🛠️</div>
+                    <h3>Online Tools</h3>
+                    <p>Access to recommended online platforms and tools for project management, collaboration, design, and development.</p>
+                    <a href="#" class="resource-link">Explore Tools</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Case Studies</h3>
+                    <p>Real-world examples of successful social innovation projects created by young people, with detailed analysis and lessons learned.</p>
+                    <a href="#" class="resource-link">Read Studies</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3>Project Templates</h3>
+                    <p>Ready-to-use templates for common project types, including business plans for social ventures and presentation formats.</p>
+                    <a href="#" class="resource-link">Get Templates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section style="background: #f8f9ff; padding: 60px 20px; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;">Stay Updated</h2>
+            <p style="max-width: 500px; margin: 0 auto 2rem; color: #666;">Get the latest blog posts, resources, and program updates delivered to your inbox.</p>
+            <form class="newsletter-form" style="max-width: 400px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" required style="flex: 1; padding: 1rem; border: 2px solid #e0e6ed; border-radius: 8px; font-size: 1rem;">
+                <button type="submit" style="padding: 1rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOTI</h3>
+                    <p>Helping Others Through Creativity & Innovation</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest programs and insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                        <li><a href="#sitemap">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOTI - Helping Others Through Innovation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Blog filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

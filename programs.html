@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - HOTI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        
+        .programs-container {
+            padding: 80px 20px;
+            background: #f8f9ff;
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+        
+        .program-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .program-content {
+            padding: 2rem;
+        }
+        
+        .program-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .curriculum-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .curriculum-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .curriculum-list li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .program-info {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .info-item {
+            margin-bottom: 1rem;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+        }
+        
+        .info-value {
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        
+        .enrollment-section {
+            background: #f0f2ff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .enrollment-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .submit-btn {
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .program-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .enrollment-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>HOTI</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Programs</h1>
+            <p>Innovative workshops and educational programs for young minds (Ages 12-17)</p>
+        </div>
+    </section>
+
+    <!-- Programs Container -->
+    <section class="programs-container">
+        <div class="container">
+            
+            <!-- Program 1: Design Thinking for Impact -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>Design Thinking for Impact</h2>
+                    <p>Teach participants to identify real-world problems and create human-centered solutions</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Introduction to design thinking</li>
+                                <li>Empathy: understanding user needs</li>
+                                <li>Defining the problem</li>
+                                <li>Brainstorming and ideation techniques</li>
+                                <li>Prototyping with simple tools</li>
+                                <li>Testing and feedback loops</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">4 weeks (2 sessions per week, 2 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">No prior experience required</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Ready to learn design thinking? Fill out the form below to apply.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="dt-name">Full Name *</label>
+                                <input type="text" id="dt-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dt-age">Age *</label>
+                                <select id="dt-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dt-email">Email *</label>
+                                <input type="email" id="dt-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dt-phone">Phone Number *</label>
+                                <input type="tel" id="dt-phone" name="phone" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="dt-motivation">Why are you interested in this program? *</label>
+                                <textarea id="dt-motivation" name="motivation" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 2: Tech for Good -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>Tech for Good</h2>
+                    <p>Show how simple tech tools and coding can be applied to social good projects</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Basics of digital problem-solving</li>
+                                <li>Introduction to coding for beginners (web, app, or chatbot)</li>
+                                <li>Low-code/no-code solutions</li>
+                                <li>Case studies: apps that changed lives</li>
+                                <li>Group project: build a simple prototype addressing a social issue</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">6 weeks (2 sessions per week, 2 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">Basic computer literacy recommended</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Ready to use technology for social good? Apply below.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="tg-name">Full Name *</label>
+                                <input type="text" id="tg-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tg-age">Age *</label>
+                                <select id="tg-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tg-email">Email *</label>
+                                <input type="email" id="tg-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tg-phone">Phone Number *</label>
+                                <input type="tel" id="tg-phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tg-experience">Previous tech experience (if any)</label>
+                                <textarea id="tg-experience" name="experience" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="tg-motivation">What social issue would you like to address with technology? *</label>
+                                <textarea id="tg-motivation" name="motivation" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 3: Innovation in Everyday Life -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>Innovation in Everyday Life</h2>
+                    <p>Encourage participants to creatively reuse and repurpose local materials for practical solutions</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Introduction to frugal innovation</li>
+                                <li>Understanding sustainability and resourcefulness</li>
+                                <li>Hands-on activities: turning waste into tools/products</li>
+                                <li>Prototyping community-based solutions</li>
+                                <li>Presentation and peer review</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">3 weeks (1 workshop per week, 3 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">None - Materials provided</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Join us for hands-on innovation using everyday materials.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="iel-name">Full Name *</label>
+                                <input type="text" id="iel-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="iel-age">Age *</label>
+                                <select id="iel-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="iel-email">Email *</label>
+                                <input type="email" id="iel-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="iel-phone">Phone Number *</label>
+                                <input type="tel" id="iel-phone" name="phone" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="iel-interest">What excites you most about sustainable innovation? *</label>
+                                <textarea id="iel-interest" name="interest" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 4: Idea-to-Action Lab -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>Idea-to-Action Lab (Entrepreneurship)</h2>
+                    <p>Help participants transform ideas into sustainable ventures or community projects</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Identifying problems worth solving</li>
+                                <li>Crafting solutions and value propositions</li>
+                                <li>Building prototypes and MVPs</li>
+                                <li>Basics of pitching and fundraising</li>
+                                <li>Business models with social impact</li>
+                                <li>Demo day: pitching to mentors/investors</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">8 weeks (2 sessions per week, 2 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">Short application required</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Turn your ideas into reality. Share a problem you'd like to solve.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="ita-name">Full Name *</label>
+                                <input type="text" id="ita-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ita-age">Age *</label>
+                                <select id="ita-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ita-email">Email *</label>
+                                <input type="email" id="ita-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ita-phone">Phone Number *</label>
+                                <input type="tel" id="ita-phone" name="phone" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="ita-problem">Describe a problem you'd like to solve (Application Requirement) *</label>
+                                <textarea id="ita-problem" name="problem" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="ita-solution">What initial ideas do you have for solving this problem? *</label>
+                                <textarea id="ita-solution" name="solution" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 5: Creative Arts & Storytelling for Change -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>Creative Arts & Storytelling for Change</h2>
+                    <p>Use art, media, and storytelling as tools to spark awareness and inspire change</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Storytelling basics and emotional connection</li>
+                                <li>Using art (drawing, painting, design, photography) for advocacy</li>
+                                <li>Introduction to digital storytelling and short-form video</li>
+                                <li>Group project: create a campaign around a social issue</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">4 weeks (1 session per week, 3 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">No prior skills required—just passion</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Express your creativity while making a difference in the world.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="cas-name">Full Name *</label>
+                                <input type="text" id="cas-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cas-age">Age *</label>
+                                <select id="cas-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cas-email">Email *</label>
+                                <input type="email" id="cas-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cas-phone">Phone Number *</label>
+                                <input type="tel" id="cas-phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cas-medium">What creative medium interests you most?</label>
+                                <select id="cas-medium" name="medium">
+                                    <option value="">Select Medium</option>
+                                    <option value="drawing">Drawing/Illustration</option>
+                                    <option value="photography">Photography</option>
+                                    <option value="video">Video/Film</option>
+                                    <option value="writing">Creative Writing</option>
+                                    <option value="design">Graphic Design</option>
+                                    <option value="mixed">Mixed Media</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cas-cause">What social cause would you like to support through your art? *</label>
+                                <textarea id="cas-cause" name="cause" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 6: STEM + Community Challenges -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>STEM + Community Challenges</h2>
+                    <p>Apply STEM knowledge to solve real local problems</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Understanding community-based STEM challenges</li>
+                                <li>Team formation and brainstorming</li>
+                                <li>Prototyping solutions using engineering/science concepts</li>
+                                <li>Testing solutions with mentors</li>
+                                <li>Showcase and awards</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">5 weeks (2 sessions per week, 2 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">Teams encouraged</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Use science and engineering to solve community problems.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="stem-name">Full Name *</label>
+                                <input type="text" id="stem-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stem-age">Age *</label>
+                                <select id="stem-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stem-email">Email *</label>
+                                <input type="email" id="stem-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stem-phone">Phone Number *</label>
+                                <input type="tel" id="stem-phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stem-subjects">Which STEM subjects interest you most? *</label>
+                                <select id="stem-subjects" name="subjects" required multiple>
+                                    <option value="math">Mathematics</option>
+                                    <option value="physics">Physics</option>
+                                    <option value="chemistry">Chemistry</option>
+                                    <option value="biology">Biology</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="computer-science">Computer Science</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stem-team">Do you have a team or would you like to be placed in one?</label>
+                                <select id="stem-team" name="team">
+                                    <option value="">Select Option</option>
+                                    <option value="have-team">I have a team</option>
+                                    <option value="need-team">I need to be placed in a team</option>
+                                    <option value="individual">I prefer to work individually</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="stem-challenge">What community challenge would you like to tackle with STEM? *</label>
+                                <textarea id="stem-challenge" name="challenge" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 7: Future Skills Bootcamp -->
+            <div class="program-card">
+                <div class="program-header">
+                    <h2>Future Skills Bootcamp</h2>
+                    <p>Equip participants with emerging tech skills linked to solving social problems</p>
+                </div>
+                <div class="program-content">
+                    <div class="program-details">
+                        <div>
+                            <h3>Curriculum</h3>
+                            <ul class="curriculum-list">
+                                <li>Introduction to AI, robotics, and renewable energy</li>
+                                <li>Practical demos: simple AI tools, solar-powered projects, DIY robotics</li>
+                                <li>Case studies of future skills driving impact</li>
+                                <li>Mini-project: apply a future skill to solve a local issue</li>
+                            </ul>
+                        </div>
+                        <div class="program-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <div class="info-value">6 weeks (2 sessions per week, 2 hours each)</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Age Range:</span>
+                                <div class="info-value">12-17 years</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Prerequisites:</span>
+                                <div class="info-value">Basic STEM background recommended</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Capacity:</span>
+                                <div class="info-value">Limited to 30 participants per cohort</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-section">
+                        <h3>Enroll Now</h3>
+                        <p>Explore cutting-edge technology and its potential for social impact.</p>
+                        <form class="enrollment-form">
+                            <div class="form-group">
+                                <label for="fs-name">Full Name *</label>
+                                <input type="text" id="fs-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fs-age">Age *</label>
+                                <select id="fs-age" name="age" required>
+                                    <option value="">Select Age</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fs-email">Email *</label>
+                                <input type="email" id="fs-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fs-phone">Phone Number *</label>
+                                <input type="tel" id="fs-phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fs-tech">Which future technology interests you most? *</label>
+                                <select id="fs-tech" name="tech" required>
+                                    <option value="">Select Technology</option>
+                                    <option value="ai">Artificial Intelligence</option>
+                                    <option value="robotics">Robotics</option>
+                                    <option value="renewable">Renewable Energy</option>
+                                    <option value="iot">Internet of Things</option>
+                                    <option value="all">All of the above</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fs-background">Describe your STEM background (math, science, technology courses) *</label>
+                                <textarea id="fs-background" name="background" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="fs-project">What local issue would you like to address with future technology? *</label>
+                                <textarea id="fs-project" name="project" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="submit-btn">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOTI</h3>
+                    <p>Helping Others Through Creativity & Innovation</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest programs and insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                        <li><a href="#sitemap">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOTI - Helping Others Through Innovation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
