@@ -1,0 +1,64 @@
+# GitHub Pages Configuration for HOTI Website
+title: "HOTI - Helping Others Through creativity & Innovation"
+description: "Empowering youth ages 12-17 through innovative programs and creative opportunities"
+url: "https://kosi-ugorji.github.io"
+baseurl: "/hoti"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+author: "HOTI Organization"
+twitter:
+  username: hoti_org
+social:
+  name: HOTI
+  links:
+    - https://twitter.com/hoti_org
+    - https://facebook.com/hotiorg
+    - https://instagram.com/hoti_org
+    - https://linkedin.com/company/hoti-org
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+# Include files
+include:
+  - assets
+
+# Collections
+collections:
+  programs:
+    output: true
+    permalink: /:collection/:name/
+  blog:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "programs"
+    values:
+      layout: "program"
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "post"
