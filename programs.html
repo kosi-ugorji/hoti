@@ -7,7 +7,160 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ... your existing CSS ... */
+       <style>
+    .page-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 120px 20px 80px;
+        text-align: center;
+    }
+
+    .programs-container {
+        padding: 80px 20px;
+        background: #f8f9ff;
+    }
+
+    .program-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 3rem;
+        overflow: hidden;
+    }
+
+    .program-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .program-content {
+        padding: 2rem;
+    }
+
+    .program-details {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .curriculum-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .curriculum-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .curriculum-list li:before {
+        content: "✓";
+        color: #667eea;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    .program-info {
+        background: #f8f9ff;
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .info-item {
+        margin-bottom: 1rem;
+    }
+
+    .info-label {
+        font-weight: 600;
+        color: #333;
+        display: block;
+    }
+
+    .info-value {
+        color: #666;
+        margin-top: 0.25rem;
+    }
+
+    .enrollment-section {
+        background: #f0f2ff;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+
+    .enrollment-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .submit-btn {
+        background: #667eea;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+        background: #764ba2;
+    }
+
+    @media (max-width: 768px) {
+        .program-details {
+            grid-template-columns: 1fr;
+        }
+
+        .enrollment-form {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
     </style>
 </head>
 <body>
@@ -522,4 +675,40 @@
 
         </div>
     </section>
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>HOTI</h3>
+                <p>Helping Others Through Creativity & Innovation</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Use</a></li>
+                    <li><a href="#sitemap">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HOTI - Helping Others Through Innovation. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
 
