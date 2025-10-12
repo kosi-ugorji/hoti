@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started with Design Thinking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with Design Thinking - HOTI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #fafafa;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      color: #222;
-      line-height: 1.7;
+      background: #ffffff;
+      color: #333;
     }
+
     header {
-      background: linear-gradient(120deg, #6c63ff, #8a84ff);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px;
     }
+
     header h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-      padding: 50px 40px;
-    }
-    section h2 {
-      color: #6c63ff;
-      margin-bottom: 15px;
-      font-size: 1.8em;
-    }
-    section h3 {
-      color: #333;
-      margin-top: 35px;
-    }
-    section ul {
-      margin-left: 20px;
-    }
-    img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 25px 0;
-    }
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 25px 0;
-    }
-    .image-row img {
-      flex: 1 1 calc(50% - 15px);
-      object-fit: cover;
-      height: 350px;
-    }
-    footer {
+      margin: 0;
+      font-size: 2.5rem;
       text-align: center;
-      padding: 40px 0;
-      background: #f0f0f8;
-      color: #444;
-      font-size: 0.95em;
     }
-        .back-link {
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-top: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    main.blog-content {
+      background: white;
+      max-width: 900px;
+      margin: -40px auto 60px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding: 3rem 2rem;
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 25px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #6c63ff;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      color: black;
+      margin-top: 20px;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .back-link {
       display: inline-block;
       margin-top: 40px;
       color: linear-gradient(120deg, #6c63ff, #8a84ff);
@@ -86,10 +95,8 @@
       background: linear-gradient(120deg, #6c63ff, #8a84ff);
       color: white;
     }
-
   </style>
 </head>
-
 
 <body>
 
@@ -98,14 +105,12 @@
     <p>Learn the fundamentals of design thinking and how this human-centered approach can help you solve problems more effectively. Perfect for young innovators just getting started.</p>
   </header>
 
-  <section>
-    <h2>Introduction</h2>
+  <main class="blog-content">
     <p>Design Thinking is more than a method — it’s a mindset. It helps you look at problems from a human point of view, encouraging creativity, collaboration, and experimentation. Instead of focusing only on technical or academic solutions, design thinking asks: “What do people really need?”</p>
     <p>It’s used by top companies, social innovators, and educators — but it’s also perfect for students and young creators who want to make change in their communities.</p>
-    <div class="image-row">
-      <img src="HOTI website pics/website/IMG-20251011-WA0063.jpg" alt="Students brainstorming ideas">
-      <img src="HOTI website pics/robotics/IMG-20251011-WA0069.jpg" alt="Workshop activity at a conference" width=100px height=350px>
-    </div>
+
+    <div class="blog-image"><img src="HOTI website pics/website/IMG-20251011-WA0063.jpg" alt="Students brainstorming ideas"></div>
+    <div class="blog-image"><img src="HOTI website pics/robotics/IMG-20251011-WA0069.jpg" alt="Workshop activity at a conference"></div>
 
     <h2>1. What Is Design Thinking?</h2>
     <p>Design Thinking is a human-centered process that helps you find innovative solutions to real-world problems. It combines empathy (understanding people), creativity (generating ideas), and logic (testing and refining them).</p>
@@ -124,6 +129,7 @@
     <p>For young innovators, it’s a mindset that can turn curiosity into impact.</p>
 
     <h2>3. The Five Stages in Action</h2>
+
     <h3>Stage 1: Empathize</h3>
     <p>Talk to people, observe their experiences, and understand their emotions. You’re not looking for quick answers — you’re trying to see the world through their eyes.</p>
     <p><i>Example:</i> Interview classmates about what makes studying stressful or fun.</p>
@@ -142,10 +148,8 @@
     <h3>Stage 5: Test</h3>
     <p>Share your prototype with real users. Ask what they liked, what didn’t work, and how they would improve it. Testing helps you refine ideas before launching them.</p>
 
-    <div class="image-row">
-      <img src="HOTI website pics/robotics/WhatsApp Image 2025-10-11 at 23.24.04_b8210505.jpg" alt="Students testing prototypes">
-      <img src="HOTI website pics/robotics/IMG-20251011-WA0070.jpg" alt="Team collaboration session">
-    </div>
+    <div class="blog-image"><img src="HOTI website pics/robotics/WhatsApp Image 2025-10-11 at 23.24.04_b8210505.jpg" alt="Students testing prototypes"></div>
+    <div class="blog-image"><img src="HOTI website pics/robotics/IMG-20251011-WA0070.jpg" alt="Team collaboration session"></div>
 
     <h2>4. The Design Thinking Mindset</h2>
     <p>Beyond the steps, design thinking is about how you think:</p>
@@ -201,13 +205,10 @@
     <p>Design Thinking isn’t about being perfect — it’s about staying curious, creative, and empathetic. Start small, test boldly, and learn as you go. The more you practice, the better you’ll become at turning ideas into impact.</p>
     <p>You don’t need to be a designer to think like one — you just need to care enough to make things better.</p>
 
-    <div class="image-row">
-      <img src="HOTI website pics/website/IMG-20251011-WA0044.jpg" alt="Group photo of youth innovators">
-    </div>
+    <div class="blog-image"><img src="HOTI website pics/website/IMG-20251011-WA0044.jpg" alt="Group photo of youth innovators"></div>
+
     <a href="blog.html" class="back-link">← Back to Blog</a>
-  </section>
+  </main>
 
 </body>
 </html>
-
-
