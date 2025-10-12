@@ -125,16 +125,52 @@
                 <div class="enrollment-section">
                     <h3>Enroll Now</h3>
                     <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                        <input type="hidden" name="program" value="Tech for Good">
-                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
-                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
-                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
-                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
-                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
-                        <div class="form-group"><label>Previous tech experience (if any)</label><textarea name="experience" rows="3"></textarea></div>
-                        <div class="form-group"><label>What social issue would you like to address with technology? *</label><textarea name="motivation" rows="4" required></textarea></div>
-                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
-                    </form>
+    <!-- Hidden field to identify the program -->
+    <input type="hidden" name="program" value="Design Thinking for Impact">
+    
+    <!-- User's name -->
+    <div class="form-group">
+        <label for="dt-name">Full Name *</label>
+        <input type="text" id="dt-name" name="name" required>
+    </div>
+
+    <!-- User's age -->
+    <div class="form-group">
+        <label for="dt-age">Age *</label>
+        <select id="dt-age" name="age" required>
+            <option value="">Select Age</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+        </select>
+    </div>
+
+    <!-- User's email -->
+    <div class="form-group">
+        <label for="dt-email">Email *</label>
+        <input type="email" id="dt-email" name="_replyto" placeholder="youremail@example.com" required>
+    </div>
+
+    <!-- User's phone -->
+    <div class="form-group">
+        <label for="dt-phone">Phone Number *</label>
+        <input type="tel" id="dt-phone" name="phone" required>
+    </div>
+
+    <!-- Motivation / message -->
+    <div class="form-group full-width">
+        <label for="dt-motivation">Why are you interested in this program? *</label>
+        <textarea id="dt-motivation" name="message" rows="4" required></textarea>
+    </div>
+
+    <!-- Submit button -->
+    <div class="form-group full-width">
+        <button type="submit" class="submit-btn">Apply Now</button>
+    </div>
+</form>
                 </div>
             </div>
         </div>
