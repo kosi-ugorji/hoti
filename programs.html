@@ -1,677 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs - HOTI</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-    .page-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 200px 20px 80px;
-        text-align: center;
-    }
-
-    .programs-container {
-        padding: 80px 20px;
-        background: #f8f9ff;
-    }
-
-    .program-card {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        margin-bottom: 3rem;
-        overflow: hidden;
-    }
-
-    .program-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 2rem;
-        text-align: center;
-    }
-
-    .program-content {
-        padding: 2rem;
-    }
-
-    .program-details {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .curriculum-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .curriculum-list li {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #eee;
-        position: relative;
-        padding-left: 1.5rem;
-    }
-
-    .curriculum-list li:before {
-        content: "✓";
-        color: #667eea;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-
-    .program-info {
-        background: #f8f9ff;
-        padding: 1.5rem;
-        border-radius: 10px;
-    }
-
-    .info-item {
-        margin-bottom: 1rem;
-    }
-
-    .info-label {
-        font-weight: 600;
-        color: #333;
-        display: block;
-    }
-
-    .info-value {
-        color: #666;
-        margin-top: 0.25rem;
-    }
-
-    .enrollment-section {
-        background: #f0f2ff;
-        padding: 2rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-    }
-
-    .enrollment-form {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-group label {
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: #333;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.75rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
-    }
-
-    .full-width {
-        grid-column: 1 / -1;
-    }
-
-    .submit-btn {
-        background: #667eea;
-        color: white;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        margin-top: 1rem;
-    }
-
-    .submit-btn:hover {
-        background: #764ba2;
-    }
-
-    @media (max-width: 768px) {
-        .program-details {
-            grid-template-columns: 1fr;
-        }
-
-        .enrollment-form {
-            grid-template-columns: 1fr;
-        }
-    }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs - HOTI</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+.page-header {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 200px 20px 80px; text-align: center;}
+.programs-container {padding: 80px 20px; background: #f8f9ff;}
+.program-card {background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 3rem; overflow: hidden;}
+.program-header {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; text-align: center;}
+.program-content {padding: 2rem;}
+.program-details {display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;}
+.curriculum-list {list-style: none; padding: 0;}
+.curriculum-list li {padding: 0.5rem 0; border-bottom: 1px solid #eee; position: relative; padding-left: 1.5rem;}
+.curriculum-list li:before {content: "✓"; color: #667eea; font-weight: bold; position: absolute; left: 0;}
+.program-info {background: #f8f9ff; padding: 1.5rem; border-radius: 10px;}
+.info-item {margin-bottom: 1rem;}
+.info-label {font-weight: 600; color: #333; display: block;}
+.info-value {color: #666; margin-top: 0.25rem;}
+.enrollment-section {background: #f0f2ff; padding: 2rem; border-radius: 10px; margin-top: 2rem;}
+.enrollment-form {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1rem; margin-top:1rem;}
+.form-group {display:flex; flex-direction: column;}
+.form-group label {margin-bottom:0.5rem; font-weight:500; color:#333;}
+.form-group input, .form-group select, .form-group textarea {padding:0.75rem; border:1px solid #ddd; border-radius:5px; font-size:1rem;}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {outline:none; border-color:#667eea; box-shadow:0 0 0 2px rgba(102,126,234,0.1);}
+.full-width {grid-column:1/-1;}
+.submit-btn {background:#667eea; color:white; padding:1rem 2rem; border:none; border-radius:8px; font-size:1rem; font-weight:500; cursor:pointer; transition: background 0.3s ease; margin-top:1rem;}
+.submit-btn:hover {background:#764ba2;}
+@media (max-width:768px){.program-details{grid-template-columns:1fr;}.enrollment-form{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <h2>HOTI</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="programs.html" class="active">Programs</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Our Programs</h1>
-            <p>Innovative workshops and educational programs for young minds (Ages 12-17)</p>
+<header class="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><h2>HOTI</h2></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html" class="active">Programs</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Programs Container -->
-    <section class="programs-container">
-        <div class="container">
+<section class="page-header">
+    <div class="container">
+        <h1>Our Programs</h1>
+        <p>Innovative workshops and educational programs for young minds (Ages 12-17)</p>
+    </div>
+</section>
 
-            <!-- Program 1: Design Thinking for Impact -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Design Thinking for Impact</h2>
-                    <p>Teach participants to identify real-world problems and create human-centered solutions</p>
+<section class="programs-container">
+    <div class="container">
+
+        <!-- Program 1 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Design Thinking for Impact</h2><p>Teach participants to identify real-world problems and create human-centered solutions</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Introduction to design thinking</li>
+                            <li>Empathy: understanding user needs</li>
+                            <li>Defining the problem</li>
+                            <li>Brainstorming and ideation techniques</li>
+                            <li>Prototyping with simple tools</li>
+                            <li>Testing and feedback loops</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">4 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">30 participants per cohort</div></div>
+                    </div>
                 </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Introduction to design thinking</li>
-                                <li>Empathy: understanding user needs</li>
-                                <li>Defining the problem</li>
-                                <li>Brainstorming and ideation techniques</li>
-                                <li>Prototyping with simple tools</li>
-                                <li>Testing and feedback loops</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">4 weeks (2 sessions per week, 2 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 30 participants per cohort</div></div>
-                        </div>
-                    </div>
-                    
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Ready to learn design thinking? Fill out the form below to apply.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Design Thinking for Impact">
-                            <div class="form-group">
-                                <label for="dt-name">Full Name *</label>
-                                <input type="text" id="dt-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="dt-age">Age *</label>
-                                <select id="dt-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="dt-email">Email *</label>
-                                <input type="email" id="dt-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="dt-phone">Phone Number *</label>
-                                <input type="tel" id="dt-phone" name="phone" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="dt-motivation">Why are you interested in this program? *</label>
-                                <textarea id="dt-motivation" name="motivation" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Design Thinking for Impact">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group full-width"><label>Why are you interested in this program? *</label><textarea name="motivation" rows="4" required></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
                 </div>
             </div>
-
-            <!-- Program 2: Tech for Good -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Tech for Good</h2>
-                    <p>Show how simple tech tools and coding can be applied to social good projects</p>
-                </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Basics of digital problem-solving</li>
-                                <li>Introduction to coding for beginners (web, app, or chatbot)</li>
-                                <li>Low-code/no-code solutions</li>
-                                <li>Case studies: apps that changed lives</li>
-                                <li>Group project: build a simple prototype addressing a social issue</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">6 weeks (2 sessions per week, 2 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">Basic computer literacy recommended</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 30 participants per cohort</div></div>
-                        </div>
-                    </div>
-
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Ready to use technology for social good? Apply below.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Tech for Good">
-                            <div class="form-group">
-                                <label for="tg-name">Full Name *</label>
-                                <input type="text" id="tg-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="tg-age">Age *</label>
-                                <select id="tg-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="tg-email">Email *</label>
-                                <input type="email" id="tg-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="tg-phone">Phone Number *</label>
-                                <input type="tel" id="tg-phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="tg-experience">Previous tech experience (if any)</label>
-                                <textarea id="tg-experience" name="experience" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="tg-motivation">What social issue would you like to address with technology? *</label>
-                                <textarea id="tg-motivation" name="motivation" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Program 3: Innovation in Everyday Life -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Innovation in Everyday Life</h2>
-                    <p>Encourage participants to creatively reuse and repurpose local materials for practical solutions</p>
-                </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Introduction to frugal innovation</li>
-                                <li>Understanding sustainability and resourcefulness</li>
-                                <li>Hands-on activities: turning waste into tools/products</li>
-                                <li>Prototyping community-based solutions</li>
-                                <li>Presentation and peer review</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">3 weeks (1 workshop per week, 3 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">None - Materials provided</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 30 participants per cohort</div></div>
-                        </div>
-                    </div>
-
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Join us for hands-on innovation using everyday materials.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Innovation in Everyday Life">
-                            <div class="form-group">
-                                <label for="iel-name">Full Name *</label>
-                                <input type="text" id="iel-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="iel-age">Age *</label>
-                                <select id="iel-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="iel-email">Email *</label>
-                                <input type="email" id="iel-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="iel-phone">Phone Number *</label>
-                                <input type="tel" id="iel-phone" name="phone" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="iel-interest">What excites you most about sustainable innovation? *</label>
-                                <textarea id="iel-interest" name="interest" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Program 4: Idea-to-Action Lab -->
-            <!-- Program 4: Idea-to-Action Lab -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Idea-to-Action Lab</h2>
-                    <p>Take an idea from concept to prototype with teamwork, research, and mentoring</p>
-                </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Identifying problems worth solving</li>
-                                <li>Crafting solutions and value propositions</li>
-                                <li>Building prototypes using science/engineering concepts</li>
-                                <li>Testing solutions with mentors</li>
-                                <li>Showcase and awards</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">5 weeks (2 sessions per week, 2 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 25 participants per cohort</div></div>
-                        </div>
-                    </div>
-                    
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Turn your ideas into action with guided mentorship.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Idea-to-Action Lab">
-                            <div class="form-group">
-                                <label for="ial-name">Full Name *</label>
-                                <input type="text" id="ial-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ial-age">Age *</label>
-                                <select id="ial-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="ial-email">Email *</label>
-                                <input type="email" id="ial-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ial-phone">Phone Number *</label>
-                                <input type="tel" id="ial-phone" name="phone" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="ial-idea">Briefly describe an idea you would like to develop *</label>
-                                <textarea id="ial-idea" name="idea" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Program 5: Innovation with AI & Robotics -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Innovation with AI & Robotics</h2>
-                    <p>Explore how AI, robotics, and automation can solve real-world problems</p>
-                </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Introduction to AI and robotics</li>
-                                <li>Hands-on simple AI tools and robotics kits</li>
-                                <li>Mini-projects applying AI/robotics to everyday issues</li>
-                                <li>Showcase of student innovations</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">4 weeks (2 sessions per week, 2 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">Basic coding knowledge recommended</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 20 participants per cohort</div></div>
-                        </div>
-                    </div>
-
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Discover AI and robotics through fun, hands-on projects.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Innovation with AI & Robotics">
-                            <div class="form-group">
-                                <label for="ai-name">Full Name *</label>
-                                <input type="text" id="ai-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ai-age">Age *</label>
-                                <select id="ai-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="ai-email">Email *</label>
-                                <input type="email" id="ai-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ai-phone">Phone Number *</label>
-                                <input type="tel" id="ai-phone" name="phone" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="ai-interest">What excites you most about AI and robotics? *</label>
-                                <textarea id="ai-interest" name="interest" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Program 6: Creative STEM Projects -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Creative STEM Projects</h2>
-                    <p>Learn science, technology, engineering, and math concepts by creating fun projects</p>
-                </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Mini-projects in physics, chemistry, and biology</li>
-                                <li>Engineering challenges with local materials</li>
-                                <li>Group collaborations</li>
-                                <li>Presentations and peer reviews</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">4 weeks (1 workshop per week, 3 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 25 participants per cohort</div></div>
-                        </div>
-                    </div>
-
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Get hands-on with STEM and build amazing projects.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Creative STEM Projects">
-                            <div class="form-group">
-                                <label for="stem-name">Full Name *</label>
-                                <input type="text" id="stem-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="stem-age">Age *</label>
-                                <select id="stem-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="stem-email">Email *</label>
-                                <input type="email" id="stem-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="stem-phone">Phone Number *</label>
-                                <input type="tel" id="stem-phone" name="phone" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="stem-interest">Which STEM field interests you most? *</label>
-                                <textarea id="stem-interest" name="interest" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Program 7: Future Skills Bootcamp -->
-            <div class="program-card">
-                <div class="program-header">
-                    <h2>Future Skills Bootcamp</h2>
-                    <p>Prepare for the future with critical thinking, communication, and leadership skills</p>
-                </div>
-                <div class="program-content">
-                    <div class="program-details">
-                        <div>
-                            <h3>Curriculum</h3>
-                            <ul class="curriculum-list">
-                                <li>Problem-solving techniques</li>
-                                <li>Communication and presentation skills</li>
-                                <li>Teamwork and collaboration</li>
-                                <li>Leadership and entrepreneurship basics</li>
-                                <li>Capstone project</li>
-                            </ul>
-                        </div>
-                        <div class="program-info">
-                            <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">3 weeks (3 sessions per week, 2 hours each)</div></div>
-                            <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
-                            <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
-                            <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">Limited to 30 participants per cohort</div></div>
-                        </div>
-                    </div>
-
-                    <div class="enrollment-section">
-                        <h3>Enroll Now</h3>
-                        <p>Boost your future skills with an intensive bootcamp.</p>
-                        <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
-                            <input type="hidden" name="program" value="Future Skills Bootcamp">
-                            <div class="form-group">
-                                <label for="fsb-name">Full Name *</label>
-                                <input type="text" id="fsb-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="fsb-age">Age *</label>
-                                <select id="fsb-age" name="age" required>
-                                    <option value="">Select Age</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="fsb-email">Email *</label>
-                                <input type="email" id="fsb-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="fsb-phone">Phone Number *</label>
-                                <input type="tel" id="fsb-phone" name="phone" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="fsb-goal">What skill do you want to develop most in this bootcamp? *</label>
-                                <textarea id="fsb-goal" name="goal" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">Apply Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <!-- Program 2 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Tech for Good</h2><p>Show how simple tech tools and coding can be applied to social good projects</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Basics of digital problem-solving</li>
+                            <li>Introduction to coding for beginners</li>
+                            <li>Low-code/no-code solutions</li>
+                            <li>Case studies: apps that changed lives</li>
+                            <li>Group project: build a simple prototype addressing a social issue</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">6 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">Basic computer literacy recommended</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">30 participants per cohort</div></div>
+                    </div>
+                </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Tech for Good">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group"><label>Previous tech experience (if any)</label><textarea name="experience" rows="3"></textarea></div>
+                        <div class="form-group"><label>What social issue would you like to address with technology? *</label><textarea name="motivation" rows="4" required></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Innovation in Everyday Life</h2><p>Learn to identify small but meaningful ways to improve daily life through creative thinking</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Observation and idea spotting</li>
+                            <li>Creative problem solving exercises</li>
+                            <li>Brainstorming practical solutions</li>
+                            <li>Prototype simple tools or improvements</li>
+                            <li>Sharing solutions with peers</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">4 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">30 participants per cohort</div></div>
+                    </div>
+                </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Innovation in Everyday Life">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group"><label>What part of daily life would you like to improve? *</label><textarea name="motivation" rows="4" required></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program 4 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Idea-to-Action Lab</h2><p>Take your idea from concept to actionable prototype using team-based projects</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Identifying meaningful problems</li>
+                            <li>Team formation and brainstorming</li>
+                            <li>Prototyping and testing solutions</li>
+                            <li>Mentorship and feedback</li>
+                            <li>Showcase of final projects</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">6 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">30 participants per cohort</div></div>
+                    </div>
+                </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Idea-to-Action Lab">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group"><label>Describe an idea you’d like to develop *</label><textarea name="motivation" rows="4" required></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+                    
+                        <!-- Program 5 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Creative Coding Workshop</h2><p>Learn to code through creative projects like games, animations, and interactive art</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Introduction to coding basics</li>
+                            <li>Creating simple games and animations</li>
+                            <li>Interactive storytelling projects</li>
+                            <li>Debugging and problem-solving exercises</li>
+                            <li>Showcase your final creative project</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">5 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior coding experience required</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">25 participants per cohort</div></div>
+                    </div>
+                </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Creative Coding Workshop">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group"><label>Previous coding experience (if any)</label><textarea name="experience" rows="3"></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program 6 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Entrepreneurship for Teens</h2><p>Learn the basics of starting and running a business, from idea generation to pitching</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Business idea generation</li>
+                            <li>Market research basics</li>
+                            <li>Building a simple business plan</li>
+                            <li>Pitching ideas to peers and mentors</li>
+                            <li>Launching a small project</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">6 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior business experience required</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">25 participants per cohort</div></div>
+                    </div>
+                </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Entrepreneurship for Teens">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group"><label>Describe a business idea you have *</label><textarea name="motivation" rows="4" required></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program 7 -->
+        <div class="program-card">
+            <div class="program-header"><h2>Future Skills Bootcamp</h2><p>Develop essential skills for the future including AI basics, problem-solving, and collaboration</p></div>
+            <div class="program-content">
+                <div class="program-details">
+                    <div>
+                        <h3>Curriculum</h3>
+                        <ul class="curriculum-list">
+                            <li>Introduction to AI and emerging tech</li>
+                            <li>Critical thinking and problem-solving</li>
+                            <li>Collaboration and teamwork</li>
+                            <li>Mini-project applying future skills</li>
+                            <li>Presentation and reflection</li>
+                        </ul>
+                    </div>
+                    <div class="program-info">
+                        <div class="info-item"><span class="info-label">Duration:</span><div class="info-value">5 weeks (2 sessions per week, 2 hours each)</div></div>
+                        <div class="info-item"><span class="info-label">Age Range:</span><div class="info-value">12-17 years</div></div>
+                        <div class="info-item"><span class="info-label">Prerequisites:</span><div class="info-value">No prior experience required</div></div>
+                        <div class="info-item"><span class="info-label">Capacity:</span><div class="info-value">30 participants per cohort</div></div>
+                    </div>
+                </div>
+                <div class="enrollment-section">
+                    <h3>Enroll Now</h3>
+                    <form class="enrollment-form" action="https://formspree.io/f/xeorrbgk" method="POST">
+                        <input type="hidden" name="program" value="Future Skills Bootcamp">
+                        <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                        <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
+                        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+                        <div class="form-group"><label>Which future skill excites you most? *</label><textarea name="motivation" rows="4" required></textarea></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
     </section>
     <!-- Footer -->
 <footer class="footer">
