@@ -1,343 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - HOTI</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .page-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 120px 20px 80px;
-            text-align: center;
-        }
-        
-        .contact-container {
-            padding: 80px 20px;
-            background: white;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-info {
-            background: #f8f9ff;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-info h3 {
-            color: #667eea;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            width: 40px;
-            text-align: center;
-        }
-        
-        .contact-details h4 {
-            margin: 0 0 0.5rem 0;
-            color: #333;
-        }
-        
-        .contact-details p {
-            margin: 0;
-            color: #666;
-        }
-        
-        .contact-form-section {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-form-section h3 {
-            color: #667eea;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid #e0e6ed;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        
-        .form-group.error input,
-        .form-group.error select,
-        .form-group.error textarea {
-            border-color: #e74c3c;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .office-hours {
-            background: #f8f9ff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hours-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .hours-card h4 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - HOTI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: #fff;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active {
+      color: #667eea;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .contact-container {
+      background: white;
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-info {
+      background: #f8f9ff;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .contact-info h3 {
+      color: #667eea;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .contact-item a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .office-hours {
+      background: #f8f9ff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .hours-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .stay-updated {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .stay-updated h2 {
+      margin-bottom: 1rem;
+    }
+
+    .stay-updated p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .update-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .update-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.3s;
+    }
+
+    .update-link img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+    }
+
+    .update-link:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #ddd;
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: #bbb;
+      font-size: 0.95rem;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .footer-section a:hover {
+      color: #667eea;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <h2>HOTI</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <h2>HOTI</h2>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in touch with our team - we're here to help you start your innovation journey</p>
+  <section class="page-header">
+    <h1>Contact Us</h1>
+    <p>Get in touch with our team — we're here to help you start your innovation journey.</p>
+  </section>
+
+  <section class="contact-container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>We'd love to hear from you! Whether you have questions about our programs, want to get involved, or need support, we're here to help.</p>
+        <div class="contact-item">
+          <div>👤</div>
+          <div>
+            <h4>Program Director</h4>
+            <p>Chiemena Ugorji</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Container -->
-    <section class="contact-container">
-        <div class="container">
-            <div class="contact-grid">
-                
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p style="margin-bottom: 2rem; color: #666;">We'd love to hear from you! Whether you have questions about our programs, want to get involved, or need support, we're here to help.</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">👤</div>
-                        <div class="contact-details">
-                            <h4>Program Director</h4>
-                            <p>Chiemena Ugorji</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p><a href="mailto:Chiemenaugorji@gmail.com" style="color: #667eea; text-decoration: none;">Chiemenaugorji@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p><a href="tel:+2347040758745" style="color: #667eea; text-decoration: none;">+234 704 075 8745</a></p>
-                        </div>
-                    </div>
-                </div>
-                
-                
-    <!-- Office Hours -->
-    <section class="office-hours">
-        <div class="container">
-            <h2>Response Times</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; color: #666;">We strive to respond to all inquiries promptly and provide the support you need.</p>
-            
-            <div class="hours-grid">
-                <div class="hours-card">
-                    <h4>Email Inquiries</h4>
-                    <p style="color: #666; margin: 0;">24-48 hours</p>
-                </div>
-                
-                <div class="hours-card">
-                    <h4>Program Applications</h4>
-                    <p style="color: #666; margin: 0;">3-5 business days</p>
-                </div>
-                
-                <div class="hours-card">
-                    <h4>Phone Support</h4>
-                    <p style="color: #666; margin: 0;">Mon-Fri, 9AM-5PM</p>
-                </div>
-                
-                <div class="hours-card">
-                    <h4>Emergency Support</h4>
-                    <p style="color: #666; margin: 0;">Within 24 hours</p>
-                </div>
-            </div>
+        <div class="contact-item">
+          <div>📧</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:Chiemenaugorji@gmail.com">Chiemenaugorji@gmail.com</a></p>
+          </div>
         </div>
-    </section>
-
-                <section class="office-hours">
-        <div class="container">
-            <h2>Stay Updated</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; color: #666;">Stay updated with our latest news and updates — we’re always here to keep you informed and supported.</p>
-            
-            <a href="https://classroom.google.com/c/NzgxMDMyNDUzMTU4?cjc=jb6gmkib" target="_blank">
-                  <div class="contact-icon">
-                    <img src="data:image/jpeg;base64,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" 
-                         alt="Google Classroom" width="40" height="40"
-                        <p style="color: #666; margin: 0;">Google Classroom</p>
-                  </div>
-                </a>
-                
-                <a href="https://chat.whatsapp.com/LCFguYHyYcBCZqM1SJE6y5" target="_blank">
-                      <div class="contact-icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJgAAACUCAMAAABY3hBoAAAAZlBMVEX///8AAAD8/Pzz8/Pf39/29vb5+fnu7u7o6OgcHBzi4uJ3d3exsbGqqqrHx8dgYGA9PT2WlpZoaGjV1dWBgYG4uLjOzs4oKCi+vr5ISEiOjo6kpKRRUVEYGBg3Nzeenp4wMDAPDw+anVvmAAAJG0lEQVR4nL1c2aKqMAxUQVYFBWRRXPj/n7yC53iZNC0tlDOPKBDSZLI0sNnMhZ8f4tdWgbA917kz+/ozpTrEjUqoL9qi/jOhPPd50hLqK1zt/oVYxzQ0EqtHFa+sN6+MjYX6xTlaT65LNlusN17xOqI5h/sSsQakuX256nSxWD1sa63UIwcdFIE9sfzCmlhvPA6WxPIONsXq0VgxtWDSFR/p9XyskwH15fYs2mrijO68XC6lut4i1azJ7KNDkT4UZ7YLlbZTEOrpXCtdbOfWZ3mUDxfFglwWFF/p0de6QnRtZaIV3my5agmlhk+DqOwlV4lkmd6ziZBcML2YXsi5STQ/K+vweLmyZDfjYv6FddQwmSEXG4Ky2c60q1mtmWufY6/TIk/yj8wlu5vZRfZMbKwWsyIb2p4mV+D0ldrIj2uGdA0k24v2VR3n2DxzaYaxj7one+LJdsLugIsoma4HiJawgKRFRKL96rGG6DzautaDL6xIqGO/gqrvpV253pwmcPdrOjq5ND5WKxQQ4qpkU77lUwN4WUzRRxDSvCmSpIa/klyMZGqDqek6zs1MzCU7qVQQkbZEtWY3hEpWyP8qJNLrdmnO5G7yFIEyhXFOYgaqh1BmNz4pHQwzkhkgN5QtJqG9bHW5Ni7Ja3nPdPFPzVpEMQZhgRP7J5Lr/EV7UuBNrq1BhJcwsee7rhsEjp3s7G3XWHaeRPsnxUe7Z69T/6S2XWxLshz1ITocoQp2IXcjxSvo0Ay4mJWQ+WFxdWWvMeYda8mQj3emKkML4+MW0gkv+wzgWjVoZTssi9ie3w0Xe2ttNwbtHwMTctiDO51YqcXAUMJlW/gNLZCrDfZChd/YckwSM8cZswf5dMpRBVPfz+iI8ECVjY0X78olFQ6zgRTbEgytbOR5qMsXdyrXENlaS2+RE/6vRNSNj7MuyfaQLPSeP3BAZf/TGkhyQ47DcrbvdrLGGJjMftkfSjY21rAraTHFDWDNfqlsv+WOAiTt2MkyVRuQQvzqBkwv5E7zZLsj1pI2kKH98SpgV5YDHNnmm7UcIwA6+nCsk4rHqGCy3ZfKVv6NjPUhBqgI+Ds50q0XawETUoQPYSSwkqw5SzW2zWy19HKIisMh4BBeA1IbkzzIHMCiDNY/Zt2Oz0ulXqko600Blj5EpfGBSsLlsn2qlv/7HICR9S12f3yArzjl26kWi0/IVXvSyukBDjk/NmOzawwK6kPKUetO62YXPSDD6EsScEppI5jbBbIXKXvAtscrwmJxKyXygJGLL9ZnAxzsraExE0hbZxtP2NrWaM2b4Tm+eokVZSPP/IR9CcvbJcTzEwzhrVwwoXyz3m+ER79sgnG0UUU+2mkPLZvYJungsYOxJlSRz6OB3CpZvFHe4eLagmEWspXG1dkAEjcRbEMjucVA2QPywquJYHu6MWetEzUgeM0VTCzirC5mRDSm65U9hMBkc+KQ2BhsULJ9nhEcupipxXAJgj0xqCsI9udkqjJ7HR/ksSNmzYqQ9AO6Y2Y2aKIEMHiN2YU8iH8hBHNroQliZamb9nwRCSWmrelRkl1gGqSRw5O9MHurORbk7hJBdfpKtK2uItr8+tSdjgBj7zPYWu8WIzy3FKnEBAYnftRa/T1nzPR9vyca30Ev/InDUg3LtL+7Me1Tg+4gee/Lid34wEtLMEeUrGNcYJQc35+TbgUUObS3utGBUC/G+EyZWQhUA5z3uE4sKBjI4E9MZ2oSAVdnHjCgCdV7oXxq6NsMHgM5g25aypRzb1saZxu5ON1bXeULuoe++JBMwOJORstf0AGAn9PznfL3bSxjSiCHajgUQTKvnciIRDsg+zSmdrKOWnfmPRQM8tPaxfanfrnI2ln/uBd/7yveMGFbarg3UjLCGiTyMsm2j1T1UhxrxsCmv5OBYGR3gz60M+v1KVYwIItvIg3nmZT+4rChBtg8CZT/FR0efCq9Rhw6Y8G4Cga3Ur9xP+EPayGZenFFAGcrUOXcv4cDIAzDNN43fCGO20sM4OlGRohlmekupJgGqcBtP2GKN1oyXEvjbkkkfWGFAZOL7uSzAsA7zEjSBHaXTleuF+NbWOGD16IuZyTx/lnzPVUmfcGh4DtYUgTK7ObsdbtanMZZGOZHxPdsDBQF10nq4Dx+38FfSPqBtb/WGDsD96h6303iVljcCw0nMnA3T7D345etNIBXbNcqR4UJ/yHtkgWDC8GRz3nOvLNj4pYKv5ORJOVI9hR20bkh5vaSZdWkGcjEQ6KypfMB7uHa/rh62MQHGTW6yDJsOMS4ZKG/uncCN3cj39nL6100yI5NIHCMxfqLIiwI9/HagOpikY1pg5Sekn0zMMM/mAAXCy1JtQ0pwvoj82+5SIknUsUABxz8D0bAaenJDq5tSCl85/9jE3ua+craJuAgFrvkMtDwILvlXpwUWRPC7Iv0RSMohVd97aeH8AanfI8RTMzajJMEYmtDXmaDam1v3hLkQtamiMxAFuvGo1pIdFP5CkGN3q0plidsR20bheVA0SqhYCtgOmcnhauh9674ahlTgFaqJiZOezJPsPMP9fJNU67P8VIaNPQIUlJW7vLLte9fLf3qjndjPlMxQZmQvUK65iX/P5Fyj5dMfddch+M08bDgwN/ubZA86cUUnXo1ErZ0aibaJBCPuk/bw32mXPP3UczRWsk30dKp9g30VNKNUyo/T5WVZvNG/kHSpprOYbAJGzdTn6dqjvpqc2NZ1326DR2oOw4s0mM+rbcgkXenThpxT5im0ELYFrXKRtxbpvjkHOUkFnO69T/osnNdRv5YeV7gJoer+qtgd73txxkrCcI9mjbLsqK4FkWcZS3tW4jQ/ACTP3Udy6h0N1+Yb3asiVibo7U+e2b+jUIeBl/+8ae79OnFjax8te2UGFQTarI4xb9fqNLo/U4gM6sKFZ8+a57l2CAis80ZgtREWz14FqyygqPmSzrva4qNpAOrAidVkbiSx/Pca2csVprMmBgnc7ddGl8mBwKvBh8SfcQzB8wgHmWan5Z1XEnPnOB0TuYOfn67CE18M8xOg0ORNZ1MUWl8W9QBGfrZYXbMZ703sPPzsr4VbXOqujfCsHo0afE8JHmwcHj9H+tdcHegCtvXAAAAAElFTkSuQmCC" 
-                             alt="Whatsapp Group" width="40" height="40">
-                          <p style="color: #666; margin: 0;">Whatsapp Group</p>
-                      </div>
-                    </a>
-            </div>
+        <div class="contact-item">
+          <div>📱</div>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+2347040758745">+234 704 075 8745</a></p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Additional Info -->
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>HOTI</h3>
-                    <p>Helping Others Through Creativity & Innovation</p>
-                
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Use</a></li>
-                        <li><a href="#sitemap">Sitemap</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 HOTI - Helping Others Through Innovation. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <section class="office-hours">
+    <h2>Response Times</h2>
+    <p>We strive to respond to all inquiries promptly and provide the support you need.</p>
+    <div class="hours-grid">
+      <div class="hours-card"><h4>Email Inquiries</h4><p>24-48 hours</p></div>
+      <div class="hours-card"><h4>Program Applications</h4><p>3-5 business days</p></div>
+      <div class="hours-card"><h4>Phone Support</h4><p>Mon–Fri, 9AM–5PM</p></div>
+      <div class="hours-card"><h4>Emergency Support</h4><p>Within 24 hours</p></div>
+    </div>
+  </section>
 
-    <script src="assets/js/main.js"></script>
+  <section class="stay-updated">
+    <h2>Stay Updated</h2>
+    <p>Stay in the loop with our latest news and programs. Join our channels below:</p>
+    <div class="update-links">
+      <a href="https://classroom.google.com/c/NzgxMDMyNDUzMTU4?cjc=jb6gmkib" target="_blank" class="update-link">
+        <img src="https://www.gstatic.com/classroom/logo_square_rounded.svg" alt="Google Classroom" />
+        <span>Google Classroom</span>
+      </a>
+      <a href="https://chat.whatsapp.com/LCFguYHyYcBCZqM1SJE6y5" target="_blank" class="update-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        <span>WhatsApp Group</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>HOTI</h3>
+        <p>Helping Others Through Creativity & Innovation</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="programs.html">Programs</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <p><a href="https://classroom.google.com/c/NzgxMDMyNDUzMTU4?cjc=jb6gmkib" target="_blank">Google Classroom</a></p>
+        <p><a href="https://chat.whatsapp.com/LCFguYHyYcBCZqM1SJE6y5" target="_blank">WhatsApp Group</a></p>
+        <p><a href="mailto:Chiemenaugorji@gmail.com">Email Us</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 HOTI. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
+
