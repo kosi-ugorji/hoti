@@ -86,7 +86,7 @@
                 </div>
                 <div class="enrollment-section">
                     <h3>Enroll Now</h3>
-                    <form class="enrollment-form" action="https://script.google.com/macros/s/AKfycbyQjrfEX2nG3Wo4d34SUm5hjNgTDFXt3VVHcd2yIWUMYFJW5dDK92e_zFv8idHMV2ie/exec" method="POST" target="_blank">
+                    <form class="enrollment-form" action="https://script.google.com/macros/s/AKfycbyQjrfEX2nG3Wo4d34SUm5hjNgTDFXt3VVHcd2yIWUMYFJW5dDK92e_zFv8idHMV2ie/exec" method="POST">
                         <input type="hidden" name="program" value="Design Thinking for Impact">
                         <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
                         <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
@@ -126,7 +126,7 @@
                     <h3>Enroll Now</h3>
                     <form class="enrollment-form" action="https://script.google.com/macros/s/AKfycbyQjrfEX2nG3Wo4d34SUm5hjNgTDFXt3VVHcd2yIWUMYFJW5dDK92e_zFv8idHMV2ie/exec" method="POST">
     <!-- Hidden field to identify the program -->
-    <input type="hidden" name="program" value="Design Thinking for Impact">
+    <input type="hidden" name="program" value="Tech for Good">
                         <input type="hidden" name="_replyto" value="chiemenaugorji@gmail.com">
                         <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
                         <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
@@ -247,7 +247,7 @@
                         <div class="form-group"><label>Age *</label><select name="age" required><option value="">Select Age</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option></select></div>
                         <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
                         <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required></div>
-                        <div class="form-group"><label>Previous coding experience (if any)</label><textarea name="experience" rows="3"></textarea></div>
+                        <div class="form-group"><label>Previous coding experience (if any)</label><textarea name="motivation" rows="3"></textarea></div>
                         <div class="form-group full-width"><button type="submit" class="submit-btn">Apply Now</button></div>
                     </form>
                 </div>
@@ -364,7 +364,39 @@
         </div>
     </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('form.enrollment-form').forEach(form => {
+    // Ensure the action is set (you already have the /exec URL in markup)
+    const url = form.getAttribute('action');
+
+    form.removeAttribute('target'); // avoid opening new tabs
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault(); // bypass theme’s submit flow
+
+      // Basic HTML5 validation
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      const body = new FormData(form);
+      try {
+        const res  = await fetch(url, { method: 'POST', body });
+        const text = await res.text();
+        let json; try { json = JSON.parse(text); } catch {}
+
+        if (json && json.result === 'success') {
+          alert('Submitted!');     // replace with your own UI
+          form.reset();
+        } else {
+          alert('Submission error: ' + (json?.error || text));
+        }
+      } catch (err) {
+        alert('Network/server error: ' + err.message);
+      }
+    }, { capture: true }); // capture helps beat other listeners
+  });
+});
+</script>
+
 </body>
 </html>
 
