@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - HOTI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        
+        .faqs-container {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+        
+        .faq-section h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .accordion-item {
+            background: #f8f9ff;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9ff;
+            transition: background 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background: #e8edff;
+        }
+        
+        .accordion-header h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content-inner {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>HOTI</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faqs.html" class="active">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about HOTI programs and enrollment</p>
+        </div>
+    </section>
+
+    <!-- FAQs Container -->
+    <section class="faqs-container">
+        <div class="container">
+            
+            <!-- General Questions -->
+            <div class="faq-section">
+                <h2>General</h2>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What is HOTI?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>HOTI stands for "Helping Others Through Innovation." We are an organization dedicated to empowering young people aged 12-17 through innovative programs that combine creativity, technology, and social impact. Our mission is to help participants unlock their potential and develop solutions that serve their communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What ages can join HOTI programs?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>All HOTI programs are designed for youth and youngsters aged 12-17 years old. This age range allows us to provide age-appropriate content and create cohorts with participants at similar developmental stages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Are HOTI programs free?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Yes! All HOTI programs are completely free for participants. We believe that financial barriers should never prevent young people from accessing quality educational opportunities. Materials, resources, and mentorship are all provided at no cost.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Where are HOTI programs located?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Our programs are conducted both online and in-person, depending on the specific program and current circumstances. We use a combination of virtual workshops via Zoom and hands-on sessions when possible to provide the best learning experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programs Questions -->
+            <div class="faq-section">
+                <h2>Programs</h2>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How many programs can I enroll in at once?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>We recommend focusing on one program at a time to get the maximum benefit from the experience. However, you can apply for multiple programs that run at different times. Our team will help coordinate your schedule if you're interested in multiple programs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do I need any prior experience or skills?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Most of our programs are designed for beginners and require no prior experience. Some programs like "Tech for Good" recommend basic computer literacy, and "Future Skills Bootcamp" suggests a basic STEM background, but we welcome participants at all skill levels and provide support accordingly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What materials do I need for the programs?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>For most programs, we provide all necessary materials. For online components, you'll need a computer or tablet with internet access. For hands-on workshops like "Innovation in Everyday Life," all materials are provided. Specific requirements will be communicated after enrollment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How long do the programs last?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Program durations vary:</p>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Innovation in Everyday Life: 3 weeks</li>
+                                <li>Design Thinking for Impact: 4 weeks</li>
+                                <li>Creative Arts & Storytelling: 4 weeks</li>
+                                <li>STEM + Community Challenges: 5 weeks</li>
+                                <li>Tech for Good: 6 weeks</li>
+                                <li>Future Skills Bootcamp: 6 weeks</li>
+                                <li>Idea-to-Action Lab: 8 weeks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enrollment Questions -->
+            <div class="faq-section">
+                <h2>Enrollment</h2>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How do I apply for enrollment?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>To apply for any program:</p>
+                            <ol style="margin-top: 0.5rem;">
+                                <li>Visit our Programs page and choose the program that interests you</li>
+                                <li>Fill out the enrollment form for that specific program</li>
+                                <li>Submit your application</li>
+                                <li>Our team will review your application and contact you within 3-5 business days</li>
+                                <li>If accepted, you'll receive detailed program information and next steps</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>When do enrollment periods open?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>We run multiple cohorts throughout the year. Enrollment is typically open 2-3 weeks before each cohort begins. Follow our newsletter or social media for announcements about upcoming enrollment periods. You can also contact us directly to express interest in future cohorts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Is there a selection process?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Our selection process is based on enthusiasm and commitment rather than prior experience or academic performance. We look for participants who are genuinely interested in learning and making a positive impact. Some programs like "Idea-to-Action Lab" require a short application describing a problem you'd like to solve.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What if a program is full?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Each program is limited to 30 participants per cohort to ensure quality mentorship and interaction. If a program is full, you'll be placed on a waiting list and notified if spots become available. We also regularly schedule new cohorts, so you can apply for the next available session.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Questions -->
+            <div class="faq-section">
+                <h2>Support</h2>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do you use Zoom for meetings?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Yes, we use Zoom for our virtual sessions and workshops. You'll receive Zoom meeting links and instructions after enrollment. We also provide technical support to help participants who are new to online learning platforms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do you use Google Classroom?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Yes, we use Google Classroom to share resources, assignments, and facilitate ongoing communication between sessions. Participants will receive a Google Classroom invitation after enrollment. All materials and project guidelines are shared through this platform.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What support is available during programs?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Each program includes:</p>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Dedicated mentors for guidance and support</li>
+                                <li>Peer collaboration and learning opportunities</li>
+                                <li>Technical support for online platforms</li>
+                                <li>Regular check-ins and feedback sessions</li>
+                                <li>Access to additional resources and materials</li>
+                                <li>Contact support via email and phone</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Can parents/guardians get updates on progress?</h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Absolutely! We believe in keeping parents and guardians informed. We provide regular updates on participant progress, share highlights from sessions, and are always available to discuss any questions or concerns. We also invite families to final presentations and showcase events.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Still have questions?</h2>
+            <p>We're here to help! Reach out to us for any additional information about our programs.</p>
+            <a href="contact.html" class="btn" style="background: white; color: #667eea; margin-top: 1rem;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOTI</h3>
+                    <p>Helping Others Through Creativity & Innovation</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest programs and insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                        <li><a href="#sitemap">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOTI - Helping Others Through Innovation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

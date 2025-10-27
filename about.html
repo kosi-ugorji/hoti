@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About HOTI - Helping Others Through Innovation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        
+        .mission-vision {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .mission-card, .vision-card {
+            background: #f8f9ff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .who-we-serve {
+            padding: 80px 20px;
+            background: #f8f9ff;
+        }
+        
+        .approach-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .approach-card {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .approach-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>HOTI</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About HOTI</h1>
+            <p>Learn about our mission, vision, and the communities we serve</p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Our Mission & Vision</h2>
+            <div class="mission-vision-grid">
+                <div class="mission-card">
+                    <h3>Mission</h3>
+                    <p>At HOTI, our mission is to help people unlock their potential and overcome challenges by harnessing the power of innovation. We believe that creativity and problem-solving are not just skills, but lifelines that can transform communities, inspire hope, and build opportunities where they once seemed impossible.</p>
+                    <p>Through mentorship, projects, and collaborative learning, we strive to create solutions that truly serve others. We are committed to fostering an environment where young minds can explore, experiment, and develop the confidence to tackle real-world problems with innovative approaches.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Vision</h3>
+                    <p>We envision a world where innovation is guided by empathy—where ideas are not only groundbreaking but also life-changing. A world where young people and communities alike feel empowered to dream, design, and deliver solutions that uplift those around them.</p>
+                    <p>HOTI aspires to be a global hub for purposeful innovation, bridging gaps, sparking possibilities, and creating a future where helping others is the highest form of progress. We see a tomorrow where every young person has the tools and confidence to become a change-maker in their community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve Section -->
+    <section class="who-we-serve">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Who We Serve</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem;">Youth and Youngsters (Ages 12-17)</h3>
+                    <p style="font-size: 1.1rem; color: #666; line-height: 1.8;">We focus on empowering teenagers and young adults who are at a crucial stage of their development. This age group represents the future leaders, innovators, and change-makers of our world. By providing them with the right tools, mentorship, and opportunities early on, we help shape their ability to think critically, solve problems creatively, and develop a deep sense of social responsibility.</p>
+                    <p style="font-size: 1.1rem; color: #666; line-height: 1.8; margin-top: 1rem;">Our programs are designed to meet young people where they are, regardless of their background, experience level, or resources. We believe every young person has the potential to make a meaningful impact when given the right support and encouragement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="approach-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Our Approach</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">How innovation and collaboration drive impact</p>
+            
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">🤝</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Collaborative Learning</h3>
+                    <p style="color: #666;">We believe that the best solutions emerge when diverse minds work together. Our programs emphasize teamwork, peer-to-peer learning, and collective problem-solving to foster innovation through collaboration.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">🎯</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Real-World Focus</h3>
+                    <p style="color: #666;">Every project and workshop is grounded in addressing actual community challenges. We connect learning with real impact, ensuring that participants see the immediate relevance of their work.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">💡</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Design Thinking</h3>
+                    <p style="color: #666;">We use human-centered design principles to guide our approach, emphasizing empathy, ideation, prototyping, and testing to create solutions that truly serve the needs of communities.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">🚀</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Innovation Mindset</h3>
+                    <p style="color: #666;">We cultivate a culture of curiosity, experimentation, and resilience. Participants learn that failure is part of the innovation process and develop the confidence to iterate and improve.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">🌱</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Mentorship & Support</h3>
+                    <p style="color: #666;">Our experienced mentors provide guidance, encouragement, and expertise throughout the learning journey, ensuring that each participant receives personalized support to reach their potential.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">🌍</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Community Impact</h3>
+                    <p style="color: #666;">We measure success not just by what participants learn, but by the positive impact they create in their communities. Every program is designed to generate tangible, meaningful change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-align: center; color: white;">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem; color: white;">Ready to Make a Difference?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Join our community of young innovators and start your journey towards creating meaningful change.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="programs.html" class="btn" style="background: white; color: #667eea;">Explore Programs</a>
+                <a href="contact.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOTI</h3>
+                    <p>Helping Others Through Creativity & Innovation</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest programs and insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                        <li><a href="#sitemap">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOTI - Helping Others Through Innovation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
